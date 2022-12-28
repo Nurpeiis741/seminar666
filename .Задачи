@@ -1,41 +1,46 @@
-//Задача 1
-Console.WriteLine("Ведите число");
-int num = int.Parse(Console.ReadLine()!);
-if(100<=num && num<1000) {
-Console.WriteLine($"{(num%100)/10}");
-}
+// //ЗАДАЧА1
+System.Console.WriteLine("число");
+string text = Console.ReadLine()!;
+if(text.Length == 5)
+{
+   int num = Convert.ToInt32(text);
+   int num1 = num/10000;
+   int num2 = (num/1000)%10;
+   int num3 = (num/100)%100;
+   int num4 = (num%100)/10;
+   int num5 = (num%10);
+   if(num1==num5 &&num2==num4){
+    System.Console.WriteLine("ДА");
+   }
+   }
 else
 {
- Console.WriteLine($"{num} не подходящее число");   
+    System.Console.WriteLine("НЕТ");
 }
 
-//Задача 2
- Console.WriteLine("Ведите число");
-int num1 = int.Parse(Console.ReadLine()!);
-if(1000<=num1 && num1<10000){
-    Console.WriteLine($"{num1}->{(num1%100)/10}");
-}
-if(100<=num1 && num1<1000){
-    Console.WriteLine($"{num1}->{(num1%100)%10}");}
-if(10000<num1){
-    Console.WriteLine($"Берем числа до 100000");
-} 
+//ЗАДАЧА2
+System.Console.WriteLine("x1");
+int x1 = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("y1");
+int y1 = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("z1");
+int z1 = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("x2");
+int x2 = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("y2");
+int y2 = Convert.ToInt32(Console.ReadLine());
+System.Console.WriteLine("z2");
+int z2 = Convert.ToInt32(Console.ReadLine());
+double result = Math.Sqrt(Math.Pow((x1-x2),2))+Math.Pow((y1-y2),2)+Math.Pow((z1-z2),2);
+System.Console.WriteLine($"расстояние между ними в 3D пространстве {result}");
 
-if(num1<100){
-    Console.WriteLine($"третьей цифры нет"); 
+//ЗАДАЧА3
+System.Console.WriteLine("Число");
+int x = Convert.ToInt32(Console.ReadLine());
+int count =1;
+while(count<=x){
+    double result1=Math.Pow(count,3);
+    System.Console.Write(result1+" ");
+    count++;
 }
 
-//Задача 3
-Console.WriteLine("Ведите число");
-int num2 = int.Parse(Console.ReadLine()!);
-if(num2>=1 && num2<=5)
-{
-    Console.WriteLine($"Нет");
-}
-if(num2==6 || num2==7){
-   Console.WriteLine($"ДА"); 
-}
-if(num2>7)
-{
-    Console.WriteLine($"Нет дня недели");
-}
