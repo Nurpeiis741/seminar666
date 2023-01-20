@@ -1,48 +1,80 @@
-//Задача 1
-// System.Console.WriteLine("Введите число А");
-// int num = int.Parse(Console.ReadLine()!);
-// System.Console.WriteLine("Введите число В");
-// int n = int.Parse(Console.ReadLine()!);
-// int num_n=1;
-// System.Console.WriteLine($"{Get(num_n)}"); 
 
+// Задача1-------------------------------------------------------------
+int [] Array = GetArray(6);
+int[] GetArray(int size)
+{
+    int[]Array=new int[size];
+    for(int i=0;i<size;i++)
+    {
+        Array[i]=new Random().Next(100,1000);
+    }
+    return Array;
+    
+}
+System.Console.WriteLine($"[{String.Join(", ",Array)}]");
+int count = 0;
+foreach(int el in Array){
+    if(el%2==0){
+        count=count+1;
+    }
+}
+System.Console.WriteLine($"Колиечство четных чисел {count}");
 
-// int Get(int num3){
-// for(int i=0; i<n; i++) 
+// // Задача2------------------------------------------------------------
+// int [] Array = GetArray(7);
+// int[] GetArray(int size)
 // {
-//    num_n*=num;
-//   }
-//   return num_n;
-//   }
-
-
-//Задача 2
-// System.Console.WriteLine("Введите число ");
-// int num2 = int.Parse(Console.ReadLine()!);
-// int sum=0;
-// System.Console.WriteLine($"{sum1(sum)}");
-
-// int sum1(int A){
-// while(num2>0){
-//  sum=sum+num2%10;
-// num2=num2/10;
+//     int[]Array=new int[size];
+//     for(int i=0;i<size;i++)
+//     {
+//         Array[i]=new Random().Next(100,1000);
+//     }
+//     return Array;
 // }
-// return sum;
+// System.Console.WriteLine($"[{String.Join(", ",Array)}]");
+// int sum =0;
+// for (int i = 1; i < 8 ; i += 2)
+//             {
+            
+//                   sum += Array[i];
+            
+//             }
+//             System.Console.WriteLine($"сумма элементов на нечетных индексов {sum}");
+
+// Задача3----------------------------------------------------------------------------------
+// int [] Array = GetArray(7);
+// int[] GetArray(int size)
+// {
+//     int[]Array=new int[size];
+//     for(int i=0;i<size;i++)
+//     {
+//         Array[i]=new Random().Next(1,10);
+//     }
+//     System.Console.WriteLine($"[{String.Join(", ",Array)}]");
+//     int size3=size%2;
+// int size2=size/2;
+// int sup=1;
+
+//     int[]Array2=new int[size];
+//     for(int i=0;i<size2;i++)
+//     {
+       
+//         int n =0;
+//         n=Array[i]*Array[size=size-1];
+//         System.Console.Write($"{n}, ");
+//          sup=sup+1; 
+        
+   
+          
+        
+//     }
+//     int []Array3=new int[size];
+//    if(size3!=0)
+//         {
+        
+//             System.Console.Write(Array[sup-1]);
+//         }
+//     return Array;
+    
 // }
-
-
-//Задача 3
-// int[] Array = GetArray(8); 
-// Console.Write($"[{String.Join(";", Array)}]"); 
- 
-// int[] GetArray (int size) 
-// { 
-//     int[] Array = new int[size]; 
-//     for (int i = 0; i < size; i++) 
-//     { 
-//         Array[i] = new Random().Next(1000); 
-//     } 
-//     return Array; 
-// }
-
 
