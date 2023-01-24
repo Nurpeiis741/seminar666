@@ -1,81 +1,51 @@
+// Задача1
 
-// Задача1-------------------------------------------------------------
-int [] Array = GetArray(6);
-int[] GetArray(int size)
-{
-    int[]Array=new int[size];
-    for(int i=0;i<size;i++)
-    {
-        Array[i]=new Random().Next(100,1000);
-    }
-    return Array;
-    
-}
-System.Console.WriteLine($"[{String.Join(", ",Array)}]");
-int count = 0;
-foreach(int el in Array){
-    if(el%2==0){
-        count=count+1;
-    }
-}
-System.Console.WriteLine($"Колиечство четных чисел {count}");
-
-// // Задача2------------------------------------------------------------
-int [] Array = GetArray(7);
-int[] GetArray(int size)
-{
-    int[]Array=new int[size];
-    for(int i=0;i<size;i++)
-    {
-        Array[i]=new Random().Next(100,1000);
-    }
-    return Array;
-}
-System.Console.WriteLine($"[{String.Join(", ",Array)}]");
-int sum =0;
-for (int i = 1; i < Array.Length ; i+=2)
-            {
-            
-               
-               sum+=Array[i];
-            
-            }
-            System.Console.WriteLine($"сумма элементов на нечетных индексов {sum}");
-
-// Задача3----------------------------------------------------------------------------------
-// int [] Array = GetArray(7);
-// int[] GetArray(int size)
+// Console.Write("Введите числа(через пробел): ");
+// int[] arr = Array.ConvertAll(Console.ReadLine()!.Split(), int.Parse);
+// int count = 0;
+ 
+// for (int i = 0; i < arr.Length; i++)
 // {
-//     int[]Array=new int[size];
-//     for(int i=0;i<size;i++)
+//     if (arr[i] > 0)
 //     {
-//         Array[i]=new Random().Next(1,10);
+//         count++;
 //     }
-//     System.Console.WriteLine($"[{String.Join(", ",Array)}]");
-//     int size3=size%2;
-// int size2=size/2;
-// int sup=1;
-
-//     int[]Array2=new int[size];
-//     for(int i=0;i<size2;i++)
-//     {
-       
-//         int n =0;
-//         n=Array[i]*Array[size=size-1];
-//         System.Console.Write($"{n}, ");
-//          sup=sup+1; 
-        
-   
-          
-        
-//     }
-//     int []Array3=new int[size];
-//    if(size3!=0)
-//         {
-        
-//             System.Console.Write(Array[sup-1]);
-//         }
-//     return Array;
-    
 // }
+ 
+// Console.WriteLine($"Кол-во элементов > 0: {count}");
+
+// Задача2
+int[] startArray=GetArray(6,0,100);
+System.Console.WriteLine(string.Join(" ",startArray));
+
+int[] GetArray(int size,int min, int max)
+{
+    int[] res=new int[size];
+    for(int i = 0;i<size;i++)
+    {
+        res[i]=new Random().Next(min,max+1);
+    }
+return res;
+}
+
+int[] nums = startArray;
+
+int temp;
+for (int i = 0; i < nums.Length - 1; i++)
+{
+    for (int j = i + 1; j < nums.Length; j++)
+    {
+        if (nums[i] > nums[j])
+        {
+            temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+    }
+}
+ Console.WriteLine("Вывод отсортированного массива");
+for (int i = 0; i < nums.Length; i++)
+{
+    Console.Write($"{nums[i]} ");
+}
 
